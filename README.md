@@ -18,6 +18,7 @@ Approach Used
 
 Business Questions To Answer:
 
+
 1.	What is the count of distinct cities in the dataset?
 SELECT COUNT(distinct City) AS DISTINCT_CITY_COUNT
 FROM amazon;
@@ -29,9 +30,14 @@ FROM amazon;
 select branch,city from amazon
 group by branch,city
 order by branch ;
+![image](https://github.com/user-attachments/assets/4198bf2f-375d-4067-96f5-a8cbbf009624)
+
  
-4.	 What is the count of distinct product lines in the dataset?
-select count(distinct Product_line) as distinct_product_line from amazon; 
+3.	 What is the count of distinct product lines in the dataset?
+select count(distinct Product_line) as distinct_product_line from amazon;
+
+![image](https://github.com/user-attachments/assets/f886e9e7-5514-4b7c-b78d-7547d8437a6a)
+
 
 5.	Which payment method occurs most frequently?
           select payment,count(*) as frequent_payment_method 
@@ -39,7 +45,8 @@ select count(distinct Product_line) as distinct_product_line from amazon;
            group by payment
           order by payment desc
     limit 1;
- 
+ ![image](https://github.com/user-attachments/assets/3a0a1149-7f14-4b5d-878c-9d99c8beddd8)
+
 
 6.	 Which product line has the highest sales?
 select product_line, sum(total) as sales
@@ -47,12 +54,15 @@ from amazon
 group by product_line
 order by sales
 limit 1;
- 
+ ![image](https://github.com/user-attachments/assets/2a2d40f8-b2ff-48f4-a091-876773f4febb)
+
 
 7.	 How much revenue is generated each month?
 select monthname(str_to_date(datee,"%d-%m-%y"))as month, sum(cogs) as total_cogs
 from amazon
 group by monthname(str_to_date(datee,"%d-%m-%y"));
+![image](https://github.com/user-attachments/assets/2eaee383-0140-49fc-bf01-e8826c0d65ae)
+
  
 8.	  In which month did the cost of goods sold reach its peak?
 select monthname(str_to_date(datee,"%d-%m-%y"))as month, sum(cogs) as total_cogs
